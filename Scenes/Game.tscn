@@ -1,32 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Prefabs/Heart.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Heal.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/ArrowArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Arrow.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Game.gd" type="Script" id=4]
 
 [node name="Hospital" type="Node"]
+script = ExtResource( 4 )
 
 [node name="Heart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 79.1635, 44.7222 )
 
-[node name="c1" type="Sprite" parent="."]
-modulate = Color( 0.541176, 0.368627, 0.368627, 1 )
-position = Vector2( 60.6587, 45.0345 )
-scale = Vector2( 0.0205038, 0.0205038 )
-texture = ExtResource( 2 )
+[node name="ArrowArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 57, 46 )
 
-[node name="c2" type="Sprite" parent="."]
-modulate = Color( 0.541176, 0.368627, 0.368627, 1 )
-position = Vector2( 97.2395, 44.704 )
-scale = Vector2( 0.0205038, 0.0205038 )
-texture = ExtResource( 2 )
+[node name="ArrowArea2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 103.784, 46.7135 )
 
-[node name="c3" type="Sprite" parent="."]
-modulate = Color( 0.541176, 0.368627, 0.368627, 1 )
-position = Vector2( 78.9491, 27.0747 )
-scale = Vector2( 0.0205038, 0.0205038 )
-texture = ExtResource( 2 )
+[node name="ArrowArea3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 79, 24 )
 
-[node name="c4" type="Sprite" parent="."]
-modulate = Color( 0.541176, 0.368627, 0.368627, 1 )
-position = Vector2( 78.9491, 62.0027 )
-scale = Vector2( 0.0205038, 0.0205038 )
-texture = ExtResource( 2 )
+[node name="ArrowArea4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 79, 66.777 )
+
+[node name="Arrow" parent="." instance=ExtResource( 3 )]
+position = Vector2( 79, 97.051 )
