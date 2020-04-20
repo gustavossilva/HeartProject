@@ -11,11 +11,11 @@ func _ready():
 		0:
 			position.x = -6
 			position.y = 46
-			self.selfVelocity = Vector2.RIGHT
+			self.selfVelocity = Vector2.RIGHT * 1.5
 		1:
 			position.x = 169
 			position.y = 46
-			self.selfVelocity = Vector2.LEFT
+			self.selfVelocity = Vector2.LEFT* 1.5
 		2: 
 			position.x = 79
 			position.y = -8

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Prefabs/Heart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/ArrowArea.tscn" type="PackedScene" id=2]
@@ -6,17 +6,32 @@
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=4]
 [ext_resource path="res://GameCamera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefabs/BloodParticle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/DoctorPanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sounds/Music/game_music.ogg" type="AudioStream" id=9]
 
 [node name="Hospital" type="Node"]
 script = ExtResource( 4 )
 
 [node name="GameCamera" parent="." instance=ExtResource( 5 )]
 
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="GameCamera"]
+stream = ExtResource( 9 )
+volume_db = -15.0
+autoplay = true
+attenuation = 0.594604
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, -0.166084 )
+
 [node name="TimeUI" parent="." instance=ExtResource( 3 )]
-margin_left = 0.242989
-margin_top = -0.0809975
-margin_right = 0.242981
-margin_bottom = -0.0809937
+margin_left = -31.8161
+margin_top = -40.9385
+margin_right = -31.8161
+margin_bottom = -40.9385
+
+[node name="DoctorPanel" parent="." instance=ExtResource( 8 )]
+position = Vector2( 12.1685, 13.1628 )
 
 [node name="Heart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 45 )
@@ -46,12 +61,13 @@ __meta__ = {
 }
 
 [node name="LifeLabel" type="Label" parent="UI"]
-margin_left = 1.63276
-margin_top = 19.1486
-margin_right = 104.633
-margin_bottom = 37.1486
+margin_left = 5.23598
+margin_top = 14.2963
+margin_right = 108.236
+margin_bottom = 32.2963
 rect_scale = Vector2( 0.14, 0.14 )
-text = "Life: "
+text = "888"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
