@@ -7,11 +7,9 @@ func _input(event):
 		playAudioSource.play()
 		yield(playAudioSource, "finished")
 		var changeScene = get_tree().change_scene("res://Scenes/MainMenu.tscn")
-		print(changeScene)
 
 
 func _on_PressEnterButton_pressed():
 	playAudioSource.play()
 	yield(playAudioSource, "finished")
 	var changeScene = get_tree().change_scene("res://Scenes/MainMenu.tscn")
-	print(changeScene)

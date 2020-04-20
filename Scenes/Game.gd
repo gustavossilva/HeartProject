@@ -85,13 +85,18 @@ func spawn():
 	var arrow = Arrow.instance()
 	var main = get_tree().current_scene
 	main.add_child(arrow)
-	yield(get_tree().create_timer(player_vars.spawn_time), "timeout")
-	spawn()
+	if self && player_vars:
+		print("entro aqui")
+		yield(get_tree().create_timer(player_vars.spawn_time), "timeout")
+		spawn()
 
 func gameLoop():
-	yield(get_tree().create_timer(player_vars.level_time), "timeout")
-	player_vars.set_level(player_vars.level+1)
-	gameLoop()
+	if self && player_vars:
+		print(player_vars.level_time)
+		yield(get_tree().create_timer(player_vars.level_time), "timeout")
+		player_vars.set_level(player_vars.level+1)
+		gameLoop()
+		pass
 	
 func cameraShake():
 	if gameCamera:

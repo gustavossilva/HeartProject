@@ -20,7 +20,4 @@ func _process(delta):
 	timeLabel.text = "Time: %.1f"%time
 	if time >= (LEVEL_PERIOD * currentLevel):
 		currentLevel += 1
-		player_vars.level += 1
-		print("fim")
-		emit_signal("timeout")
 		

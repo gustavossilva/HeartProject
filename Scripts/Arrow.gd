@@ -28,6 +28,3 @@ func _ready():
 			pass
 func _physics_process(delta):
 	move_and_collide(selfVelocity * delta * player_vars.velocity)
-
-func _exit_tree():
-	print("play particles")
