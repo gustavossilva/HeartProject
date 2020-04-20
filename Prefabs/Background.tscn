@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/médico.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/gameBg/Fundoani4.png" type="Texture" id=6]
+
+[node name="Background" type="Node2D"]
+
+[node name="BG" type="Sprite" parent="."]
+modulate = Color( 0.431373, 0.431373, 0.431373, 1 )
+position = Vector2( 80.16, 47.8128 )
+scale = Vector2( 0.316336, 0.279784 )
+texture = ExtResource( 6 )
+
+[node name="médico" type="Sprite" parent="BG"]
+position = Vector2( 13.2215, 13.2698 )
+scale = Vector2( 0.874714, 0.874714 )
+texture = ExtResource( 1 )

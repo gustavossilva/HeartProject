@@ -6,6 +6,7 @@ onready var lifeLabel = $UI/LifeLabel
 onready var gameCamera = $GameCamera
 onready var particles = $BloodParticle
 onready var heart = $Heart
+onready var doctorPanel = $DoctorPanel
 
 var actualLeft = null
 var actualRight = null
@@ -16,40 +17,48 @@ func _input(event):
 	if (event.is_action_pressed("ui_left")):
 		if actualLeft:
 			actualLeft.queue_free()
-			player_vars.playerLife += 1
+			player_vars.playerLife += 3
+			doctorPanel.change_animated_speed(-0.17)
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
 			particles.playParticle()
 			heart.playAudio()
+			doctorPanel.change_animated_speed(0.5)
 	if (event.is_action_pressed("ui_right")):
 		if actualRight:
 			actualRight.queue_free()
-			player_vars.playerLife += 1
+			player_vars.playerLife += 3
+			doctorPanel.change_animated_speed(-0.17)
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
 			particles.playParticle()
 			heart.playAudio()
+			doctorPanel.change_animated_speed(0.5)
 	if (event.is_action_pressed("ui_up")):
 		if actualUp:
 			actualUp.queue_free()
-			player_vars.playerLife += 1
+			player_vars.playerLife += 3
+			doctorPanel.change_animated_speed(-0.17)
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
 			particles.playParticle()
 			heart.playAudio()
+			doctorPanel.change_animated_speed(0.5)
 	if (event.is_action_pressed("ui_down")):
 		if actualDown:
 			actualDown.queue_free()
-			player_vars.playerLife += 1
+			player_vars.playerLife += 3
+			doctorPanel.change_animated_speed(-0.17)
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
 			particles.playParticle()
 			heart.playAudio()
-	lifeLabel.text = "Life: "+str(player_vars.playerLife)
+			doctorPanel.change_animated_speed(0.5)
+	lifeLabel.text = str(player_vars.playerLife)
 	
 func _ready():
 	gameLoop()
@@ -99,6 +108,6 @@ func _on_ArrowArea4_body_exit():
 
 
 func _on_Heart_change_life():
-	lifeLabel.text = "Life: "+str(player_vars.playerLife)
+	lifeLabel.text = str(player_vars.playerLife)
 	cameraShake()
 	particles.playParticle()
