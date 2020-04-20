@@ -8,7 +8,6 @@ var velocity = 10
 var max_life = 100
 var playerLife = max_life setget set_player_life
 
-signal life_changed
 
 func set_level(value):
 	level = clamp(self.level + value, 1, 6)
