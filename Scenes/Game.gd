@@ -3,6 +3,9 @@ extends Node
 const Arrow = preload("../Prefabs/Arrow.tscn")
 onready var player_vars = get_node("/root/GameManager")
 onready var lifeLabel = $UI/LifeLabel
+onready var gameCamera = $GameCamera
+onready var particles = $BloodParticle
+onready var heart = $Heart
 
 var actualLeft = null
 var actualRight = null
@@ -16,24 +19,36 @@ func _input(event):
 			player_vars.playerLife += 1
 		else:
 			player_vars.playerLife -= 10
+			cameraShake()
+			particles.playParticle()
+			heart.playAudio()
 	if (event.is_action_pressed("ui_right")):
 		if actualRight:
 			actualRight.queue_free()
 			player_vars.playerLife += 1
 		else:
 			player_vars.playerLife -= 10
+			cameraShake()
+			particles.playParticle()
+			heart.playAudio()
 	if (event.is_action_pressed("ui_up")):
 		if actualUp:
 			actualUp.queue_free()
 			player_vars.playerLife += 1
 		else:
 			player_vars.playerLife -= 10
+			cameraShake()
+			particles.playParticle()
+			heart.playAudio()
 	if (event.is_action_pressed("ui_down")):
 		if actualDown:
 			actualDown.queue_free()
 			player_vars.playerLife += 1
 		else:
 			player_vars.playerLife -= 10
+			cameraShake()
+			particles.playParticle()
+			heart.playAudio()
 	lifeLabel.text = "Life: "+str(player_vars.playerLife)
 	
 func _ready():
@@ -51,6 +66,11 @@ func gameLoop():
 	yield(get_tree().create_timer(player_vars.level_time), "timeout")
 	player_vars.set_level(player_vars.level+1)
 	gameLoop()
+	
+func cameraShake():
+	if gameCamera:
+		gameCamera.elapsedtime = 0
+		gameCamera.isShake = true
 
 func _on_ArrowArea_body_enter(body):
 	self.actualLeft = body
@@ -80,3 +100,5 @@ func _on_ArrowArea4_body_exit():
 
 func _on_Heart_change_life():
 	lifeLabel.text = "Life: "+str(player_vars.playerLife)
+	cameraShake()
+	particles.playParticle()
