@@ -2,6 +2,7 @@ extends Node
 
 const Arrow = preload("../Prefabs/Arrow.tscn")
 onready var player_vars = get_node("/root/GameManager")
+onready var lifeLabel = $UI/LifeLabel
 
 var actualLeft = null
 var actualRight = null
@@ -12,27 +13,29 @@ func _input(event):
 	if (event.is_action_pressed("ui_left")):
 		if actualLeft:
 			actualLeft.queue_free()
-			print("Add life")
+			player_vars.playerLife += 1
 		else:
-			print("Remove life")
+			player_vars.playerLife -= 10
 	if (event.is_action_pressed("ui_right")):
 		if actualRight:
 			actualRight.queue_free()
-			print("Add life")
+			player_vars.playerLife += 1
 		else:
-			print("Remove life")
+			player_vars.playerLife -= 10
 	if (event.is_action_pressed("ui_up")):
 		if actualUp:
 			actualUp.queue_free()
-			print("Add life")
+			player_vars.playerLife += 1
 		else:
-			print("Remove life")
+			player_vars.playerLife -= 10
 	if (event.is_action_pressed("ui_down")):
 		if actualDown:
 			actualDown.queue_free()
-			print("Add life")
+			player_vars.playerLife += 1
 		else:
-			print("Remove life")
+			player_vars.playerLife -= 10
+	lifeLabel.text = "Life: "+str(player_vars.playerLife)
+	
 func _ready():
 	gameLoop()
 	spawn()
@@ -73,3 +76,7 @@ func _on_ArrowArea3_body_exit():
 
 func _on_ArrowArea4_body_exit():
 	self.actualDown = null
+
+
+func _on_Heart_change_life():
+	lifeLabel.text = "Life: "+str(player_vars.playerLife)
