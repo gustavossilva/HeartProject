@@ -1,55 +1,65 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/SFX/click.wav" type="AudioStream" id=2]
 [ext_resource path="res://Sounds/SFX/hover.wav" type="AudioStream" id=3]
+[ext_resource path="res://Prefabs/DeathDoctorPanel.tscn" type="PackedScene" id=4]
 
 [node name="GameOverUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_horizontal_guides_": [ 1.89396 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ -7.75586 ]
 }
+
+[node name="DeathDoctorPanel" parent="." instance=ExtResource( 4 )]
+position = Vector2( 77.0569, 21.1998 )
+scale = Vector2( 2, 2 )
 
 [node name="GameOverLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = -5.0
-margin_right = 117.0
-margin_bottom = 13.0
+margin_left = -42.0101
+margin_top = 0.0201378
+margin_right = 114.99
+margin_bottom = 18.0201
 rect_scale = Vector2( 0.5, 0.5 )
 text = "GAME OVER"
 align = 1
 valign = 1
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="RestartButton" type="LinkButton" parent="."]
-margin_left = 70.0
-margin_top = 75.22
-margin_right = 196.0
-margin_bottom = 93.22
+margin_left = 66.1281
+margin_top = 81.2401
+margin_right = 192.128
+margin_bottom = 99.2401
 rect_scale = Vector2( 0.18, 0.18 )
 text = "Restart"
 underline = 1
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="MainMenuButton" type="LinkButton" parent="."]
-margin_left = 68.4398
-margin_top = 83.3424
-margin_right = 225.44
-margin_bottom = 101.342
+margin_left = 64.5679
+margin_top = 74.3625
+margin_right = 221.568
+margin_bottom = 92.3625
 rect_scale = Vector2( 0.16, 0.16 )
 text = "Main Menu"
 underline = 1
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
