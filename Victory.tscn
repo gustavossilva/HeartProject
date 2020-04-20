@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Victory.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/SFX/click.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/SFX/hover.wav" type="AudioStream" id=3]
+
+[node name="VictoryUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 1.89396 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ -7.75586 ]
+}
+
+[node name="GameOverLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -39.0101
+margin_top = -3.97986
+margin_right = 117.99
+margin_bottom = 14.0201
+rect_scale = Vector2( 0.5, 0.5 )
+text = "VICTORY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="LinkButton" parent="."]
+margin_left = 66.1281
+margin_top = 81.2401
+margin_right = 192.128
+margin_bottom = 99.2401
+rect_scale = Vector2( 0.18, 0.18 )
+text = "Restart"
+underline = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButton" type="LinkButton" parent="."]
+margin_left = 64.5679
+margin_top = 74.3625
+margin_right = 221.568
+margin_bottom = 92.3625
+rect_scale = Vector2( 0.16, 0.16 )
+text = "Main Menu"
+underline = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ClickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="HoverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="mouse_entered" from="RestartButton" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="mouse_entered" from="MainMenuButton" to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
