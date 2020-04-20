@@ -179,7 +179,8 @@ margin_top = 83.0412
 margin_right = 144.86
 margin_bottom = 115.041
 rect_scale = Vector2( 0.115, 0.115 )
-text = "Back"
+text = "BACK"
+underline = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -190,7 +191,8 @@ margin_top = 79.2851
 margin_right = 240.832
 margin_bottom = 97.2851
 rect_scale = Vector2( 0.115, 0.115 )
-text = "Start game"
+text = "START GAME"
+underline = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

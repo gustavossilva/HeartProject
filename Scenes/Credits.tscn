@@ -134,13 +134,13 @@ text = "Alex Cláudio Ramires	"
 align = 1
 
 [node name="backButton" type="LinkButton" parent="UI"]
-margin_left = -93.9337
-margin_top = 82.192
-margin_right = 14.0663
-margin_bottom = 100.192
+margin_left = -91.4154
+margin_top = 82.7731
+margin_right = 16.5846
+margin_bottom = 100.773
 rect_scale = Vector2( 0.18, 0.18 )
 rect_pivot_offset = Vector2( 199.113, -1.86945 )
-text = "VOLTAR"
+text = "BACK"
 underline = 1
 __meta__ = {
 "_edit_use_anchors_": false

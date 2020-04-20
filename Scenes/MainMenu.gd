@@ -38,7 +38,7 @@ func _on_CreditsButton_pressed():
 func _on_OptionsButton_pressed():
 	clickAudioSource.play()
 	yield(clickAudioSource, "finished")
-	get_tree().change_scene("res://Scenes/Options.tscn")
+	#get_tree().change_scene("res://Scenes/Options.tscn")
 
 
 func _on_mouse_entered():
