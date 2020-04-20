@@ -19,7 +19,7 @@ func set_player_life(value):
 	playerLife = clamp(value, 0, max_life)
 	if playerLife <= 0:
 		game_over()
-		get_tree().change_scene("GameOver.tscn")
+		get_tree().change_scene("res://GameOver.tscn")
 	if level > 5 && playerLife > 0:
 		victory()
 		
