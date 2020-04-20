@@ -6,7 +6,7 @@
 [node name="Background" type="Node2D"]
 
 [node name="BG" type="Sprite" parent="."]
-modulate = Color( 0.431373, 0.431373, 0.431373, 1 )
+modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
 position = Vector2( 80.16, 47.8128 )
 scale = Vector2( 0.316336, 0.279784 )
 texture = ExtResource( 6 )
