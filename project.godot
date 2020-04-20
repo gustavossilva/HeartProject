@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameManager="*res://Prefabs/GameManager.tscn"
+MainMenuMusic="*res://Prefabs/MainMenuMusic.tscn"
 
 [display]
 

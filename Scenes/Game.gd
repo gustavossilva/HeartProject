@@ -8,6 +8,8 @@ onready var particles = $BloodParticle
 onready var heart = $Heart
 onready var doctorPanel = $DoctorPanel
 
+onready var MenuMusic = get_node("/root/MainMenuMusic")
+
 var actualLeft = null
 var actualRight = null
 var actualUp = null
@@ -61,6 +63,7 @@ func _input(event):
 	lifeLabel.text = str(player_vars.playerLife)
 	
 func _ready():
+	MenuMusic.pauseMusic()
 	gameLoop()
 	spawn()
 	

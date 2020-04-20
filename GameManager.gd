@@ -18,12 +18,18 @@ func set_player_life(value):
 	playerLife = clamp(value, 0, max_life)
 	if playerLife <= 0:
 		game_over()
-		get_tree().change_scene("res://GameOver.tscn")
 	if level > 5 && playerLife > 0:
 		victory()
-		
+	
+func resetValues():
+	level = 1
+	spawn_time = 3
+	velocity = 10
+	playerLife = 100	
+
 func game_over():
-	print("game over")
+	resetValues()
+	get_tree().change_scene("res://GameOver.tscn")
 	
 func victory():
 	print("victory")
