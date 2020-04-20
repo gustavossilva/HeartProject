@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Heart Project"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://TitleSceneUi.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -61,4 +61,5 @@ texture={
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
