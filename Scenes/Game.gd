@@ -85,16 +85,14 @@ func spawn():
 	var arrow = Arrow.instance()
 	var main = get_tree().current_scene
 	main.add_child(arrow)
-	if self && player_vars:
-		print("entro aqui")
+	if self && player_vars && player_vars.level < 9:
 		yield(get_tree().create_timer(player_vars.spawn_time), "timeout")
 		spawn()
 
 func gameLoop():
-	if self && player_vars:
-		print(player_vars.level_time)
+	if self && player_vars && player_vars.level < 9:
 		yield(get_tree().create_timer(player_vars.level_time), "timeout")
-		player_vars.set_level(player_vars.level+1)
+		player_vars.level += 1
 		gameLoop()
 		pass
 	

@@ -10,18 +10,17 @@ var playerLife = max_life setget set_player_life
 
 
 func set_level(value):
-	level = clamp(self.level + value, 1, 8)
+	level = clamp(value, 1, 9)
+	print(level)
 	self.velocity = clamp(self.velocity + 6, 10, 52)
 	self.spawn_time = clamp(self.spawn_time - 0.8, 0.4, 3)
-	print(velocity)
-	print(spawn_time)
+	if level > 8 && playerLife > 0:
+		victory()
 
 func set_player_life(value):
 	playerLife = clamp(value, 0, max_life)
 	if playerLife <= 0:
 		game_over()
-	if level >= 8 && playerLife > 0:
-		victory()
 	
 func resetValues():
 	level = 1
