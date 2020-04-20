@@ -1,27 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Prefabs/Heart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/ArrowArea.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Prefabs/Arrow.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=4]
 
 [node name="Hospital" type="Node"]
 script = ExtResource( 4 )
 
 [node name="Heart" parent="." instance=ExtResource( 1 )]
-position = Vector2( 79.1635, 44.7222 )
+position = Vector2( 80, 45 )
 
 [node name="ArrowArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 57, 46 )
 
 [node name="ArrowArea2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 103.784, 46.7135 )
+position = Vector2( 103, 46 )
 
 [node name="ArrowArea3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 79, 24 )
 
 [node name="ArrowArea4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 79, 66.777 )
-
-[node name="Arrow" parent="." instance=ExtResource( 3 )]
-position = Vector2( 79, 97.051 )
+[connection signal="body_enter" from="ArrowArea" to="." method="_on_ArrowArea_body_enter"]
+[connection signal="body_exit" from="ArrowArea" to="." method="_on_ArrowArea_body_exit"]
+[connection signal="body_enter" from="ArrowArea2" to="." method="_on_ArrowArea2_body_enter"]
+[connection signal="body_exit" from="ArrowArea2" to="." method="_on_ArrowArea2_body_exit"]
+[connection signal="body_enter" from="ArrowArea3" to="." method="_on_ArrowArea3_body_enter"]
+[connection signal="body_exit" from="ArrowArea3" to="." method="_on_ArrowArea3_body_exit"]
+[connection signal="body_enter" from="ArrowArea4" to="." method="_on_ArrowArea4_body_enter"]
+[connection signal="body_exit" from="ArrowArea4" to="." method="_on_ArrowArea4_body_exit"]

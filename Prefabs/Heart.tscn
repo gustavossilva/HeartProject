@@ -46,10 +46,11 @@ script = ExtResource( 31 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 1 )
-frame = 19
+frame = 16
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -7.26632, -9.76673, -5.89343, 1.81511, -2.06712, 8.14831, 3.51789, 10.9503, 10.8493, 8.41979, 9.47758, -2.34076, 5.22066, -9.19914 )
