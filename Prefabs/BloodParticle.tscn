@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Prefabs/BloodParticle.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+min_value = -200.0
+max_value = 400.0
+_data = [ Vector2( 0.0151515, 296.364 ), 0.0, 3960.0, 0, 0, Vector2( 0.333333, 127.273 ), -595.862, -595.862, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = 1.0
+max_value = 2.5
+_data = [ Vector2( 0, 2.35682 ), 0.0, 0.0, 0, 0, Vector2( 0.943038, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 50.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 2 )
+scale = 2.0
+scale_random = 0.5
+scale_curve = SubResource( 4 )
+
+[node name="BloodParticle" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+emitting = false
+amount = 10
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 5 )

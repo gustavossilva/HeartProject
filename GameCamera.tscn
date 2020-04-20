@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameCamera.gd" type="Script" id=1]
+
+[node name="GameCamera" type="Camera2D"]
+position = Vector2( 80, 45 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+script = ExtResource( 1 )
