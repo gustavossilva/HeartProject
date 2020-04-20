@@ -1,25 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://HeartTime.gd" type="Script" id=1]
+[ext_resource path="res://Slider.tres" type="StyleBox" id=2]
+[ext_resource path="res://Sprites/Graber.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="TimeUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.475868
+margin_top = -0.372185
+margin_right = -0.475861
+margin_bottom = -0.372185
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TimeSlider" type="HSlider" parent="."]
-margin_right = 157.0
-margin_bottom = 16.0
+margin_left = 2.86837
+margin_top = 82.5025
+margin_right = 159.868
+margin_bottom = 98.5025
+rect_scale = Vector2( 0.4, 0.4 )
+custom_icons/grabber_disabled = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = ExtResource( 2 )
+custom_styles/grabber_area = SubResource( 1 )
 max_value = 180.0
+editable = false
+scrollable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = 1.66913
-margin_top = 14.5086
-margin_right = 41.6691
-margin_bottom = 28.5086
+margin_left = 2.86837
+margin_top = 79.4883
+margin_right = 105.868
+margin_bottom = 97.4883
 rect_scale = Vector2( 0.14, 0.14 )
 text = "Time: "
 __meta__ = {

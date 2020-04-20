@@ -25,12 +25,6 @@ attenuation = 0.594604
 [node name="Background" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, -0.166084 )
 
-[node name="TimeUI" parent="." instance=ExtResource( 3 )]
-margin_left = -31.8161
-margin_top = -40.9385
-margin_right = -31.8161
-margin_bottom = -40.9385
-
 [node name="DoctorPanel" parent="." instance=ExtResource( 8 )]
 position = Vector2( 12.1685, 13.1628 )
 
@@ -59,6 +53,8 @@ position = Vector2( 79, 24 )
 
 [node name="ArrowArea4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 79, 66.777 )
+
+[node name="TimeUI" parent="." instance=ExtResource( 3 )]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0

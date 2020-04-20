@@ -2,9 +2,9 @@ extends Control
 
 signal timeout
 
-const NUMBER_OF_LEVELS = 5
+const NUMBER_OF_LEVELS = 8
 
-const MAX_GAME_TIME = 180 #in seconds
+const MAX_GAME_TIME = 120 #in seconds
 
 const LEVEL_PERIOD = MAX_GAME_TIME/ NUMBER_OF_LEVELS
 
