@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/SFX/click.wav" type="AudioStream" id=2]
 [ext_resource path="res://Sounds/SFX/hover.wav" type="AudioStream" id=3]
 [ext_resource path="res://Prefabs/DeathDoctorPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/Music/lose.ogg" type="AudioStream" id=5]
 
 [node name="GameOverUI" type="Control"]
 anchor_right = 1.0
@@ -65,9 +66,16 @@ __meta__ = {
 
 [node name="ClickSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -10.0
 
 [node name="HoverSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="End" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0
+autoplay = true
 [connection signal="mouse_entered" from="RestartButton" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="mouse_entered" from="MainMenuButton" to="." method="_on_mouse_entered"]

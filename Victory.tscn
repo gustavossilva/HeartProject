@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Victory.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/SFX/click.wav" type="AudioStream" id=2]
 [ext_resource path="res://Sounds/SFX/hover.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/victory.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/Music/victory_music.ogg" type="AudioStream" id=5]
 
 [node name="VictoryUi" type="Control"]
 anchor_right = 1.0
@@ -14,16 +16,22 @@ __meta__ = {
 "_edit_vertical_guides_": [ -7.75586 ]
 }
 
+[node name="victory" type="Sprite" parent="."]
+position = Vector2( 76.3986, 63.4231 )
+scale = Vector2( 0.32784, 0.33145 )
+texture = ExtResource( 4 )
+
 [node name="GameOverLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -39.0101
-margin_top = -3.97986
+margin_top = -35.9799
 margin_right = 117.99
-margin_bottom = 14.0201
+margin_bottom = -17.9799
 rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "VICTORY"
 align = 1
 valign = 1
@@ -38,6 +46,8 @@ margin_top = 81.2401
 margin_right = 192.128
 margin_bottom = 99.2401
 rect_scale = Vector2( 0.18, 0.18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.34902, 0.34902, 1 )
 text = "Restart"
 underline = 1
 __meta__ = {
@@ -51,6 +61,8 @@ margin_top = 74.3625
 margin_right = 221.568
 margin_bottom = 92.3625
 rect_scale = Vector2( 0.16, 0.16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.360784, 0.34902, 0.34902, 1 )
 text = "Main Menu"
 underline = 1
 __meta__ = {
@@ -60,9 +72,16 @@ __meta__ = {
 
 [node name="ClickSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -10.0
 
 [node name="HoverSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -25.0
+autoplay = true
 [connection signal="mouse_entered" from="RestartButton" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="mouse_entered" from="MainMenuButton" to="." method="_on_mouse_entered"]

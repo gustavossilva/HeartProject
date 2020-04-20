@@ -4,10 +4,6 @@ onready var MenuMusic = get_node("/root/MainMenuMusic")
 onready var hoverAudioSource = $HoverSfx
 onready var clickAudioSource = $ClickSfx
 
-func _ready():
-	MenuMusic.playMusic()
-
-
 func _on_RestartButton_pressed():
 	clickAudioSource.play()
 	
@@ -22,4 +18,5 @@ func _on_mouse_entered():
 func _on_MainMenuButton_pressed():
 	clickAudioSource.play()
 	yield(clickAudioSource, "finished")
+	MenuMusic.playMusic()
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")

@@ -80,7 +80,7 @@ align = 1
 margin_top = 31.0
 margin_right = 435.0
 margin_bottom = 49.0
-text = "Matheus Naoto Miyano"
+text = "Mateus Naoto Miyano"
 align = 1
 
 [node name="Victor" type="Label" parent="UI/ArtContainer"]
@@ -148,8 +148,10 @@ __meta__ = {
 
 [node name="ClickSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
 
 [node name="HoverSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -10.0
 [connection signal="mouse_entered" from="UI/backButton" to="." method="_on_backButton_mouse_entered"]
 [connection signal="pressed" from="UI/backButton" to="." method="_on_backButton_pressed"]

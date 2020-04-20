@@ -73,9 +73,11 @@ underline = 1
 
 [node name="HoverSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
 
 [node name="ClickSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -10.0
 [connection signal="mouse_entered" from="UI/MenuContainer/StarGameButton" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="UI/MenuContainer/StarGameButton" to="." method="_on_StarGameButton_pressed"]
 [connection signal="mouse_entered" from="UI/MenuContainer/HowToPlayButton" to="." method="_on_mouse_entered"]

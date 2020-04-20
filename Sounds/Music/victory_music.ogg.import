@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/victory_music.ogg-3b9fa98d7698dfd68d00a14d4c467e26.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/victory_music.ogg"
+dest_files=[ "res://.import/victory_music.ogg-3b9fa98d7698dfd68d00a14d4c467e26.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
