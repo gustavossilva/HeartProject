@@ -7,6 +7,12 @@ onready var gameCamera = $GameCamera
 onready var particles = $BloodParticle
 onready var heart = $Heart
 onready var doctorPanel = $DoctorPanel
+onready var correctAudio = $BloodParticle/AudioStreamPlayer2D
+
+onready var ArrowArea1 = $ArrowArea
+onready var ArrowArea2 = $ArrowArea2
+onready var ArrowArea3 = $ArrowArea3
+onready var ArrowArea4 = $ArrowArea4
 
 var actualLeft = null
 var actualRight = null
@@ -17,8 +23,10 @@ func _input(event):
 	if (event.is_action_pressed("ui_left")):
 		if actualLeft:
 			actualLeft.queue_free()
-			player_vars.playerLife += 3
-			doctorPanel.change_animated_speed(-0.17)
+			player_vars.playerLife += 1
+			correctAudio.play()
+			doctorPanel.change_animated_speed(-0.05)
+			ArrowArea1.playAnimation()
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
@@ -28,8 +36,10 @@ func _input(event):
 	if (event.is_action_pressed("ui_right")):
 		if actualRight:
 			actualRight.queue_free()
-			player_vars.playerLife += 3
-			doctorPanel.change_animated_speed(-0.17)
+			player_vars.playerLife += 1
+			correctAudio.play()
+			doctorPanel.change_animated_speed(-0.05)
+			ArrowArea2.playAnimation()
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
@@ -39,8 +49,10 @@ func _input(event):
 	if (event.is_action_pressed("ui_up")):
 		if actualUp:
 			actualUp.queue_free()
-			player_vars.playerLife += 3
-			doctorPanel.change_animated_speed(-0.17)
+			player_vars.playerLife += 1
+			correctAudio.play()
+			doctorPanel.change_animated_speed(-0.05)
+			ArrowArea3.playAnimation()
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
@@ -50,8 +62,10 @@ func _input(event):
 	if (event.is_action_pressed("ui_down")):
 		if actualDown:
 			actualDown.queue_free()
-			player_vars.playerLife += 3
-			doctorPanel.change_animated_speed(-0.17)
+			player_vars.playerLife += 1
+			correctAudio.play()
+			doctorPanel.change_animated_speed(-0.05)
+			ArrowArea4.playAnimation()
 		else:
 			player_vars.playerLife -= 10
 			cameraShake()
