@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HeartTime.gd" type="Script" id=1]
+
+[node name="TimeUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeSlider" type="HSlider" parent="."]
+margin_right = 157.0
+margin_bottom = 16.0
+max_value = 180.0
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 1.66913
+margin_top = 14.5086
+margin_right = 41.6691
+margin_bottom = 28.5086
+text = "Time: "
+__meta__ = {
+"_edit_use_anchors_": false
+}

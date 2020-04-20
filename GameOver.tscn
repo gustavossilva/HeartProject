@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="GameOverUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverLabel" type="Label" parent="."]
+margin_left = 43.4434
+margin_top = 37.6509
+margin_right = 119.443
+margin_bottom = 51.6509
+text = "GAME OVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
